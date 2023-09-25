@@ -2,13 +2,13 @@ resource "yandex_compute_snapshot_schedule" "default" {
   name = "default"
 
   schedule_policy {
-    expression = "@weekly"
+    expression = "0 5 ? * *"
   }
 
   snapshot_count = 1
 
   snapshot_spec {
-    description = "daily"
+    description = "weekly"
   }
 
   disk_ids = [yandex_compute_instance.web1.boot_disk[0].disk_id, 
