@@ -1,0 +1,21 @@
+#cloud-config
+disable_root: true
+timezone: Europe/Moscow
+repo_update: true
+repo_upgrade: true
+
+
+users:
+  - name: user
+    groups: sudo
+    shell: /bin/bash
+    sudo: ['ALL=(ALL) NOPASSWD:ALL']
+    ssh-authorized-keys:
+      - ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDKMJibpr9FKzHiSWSf14fi4/EbU+SNiBPp+eO/ZfejuzE0adk859k4k0fFY9+ndmE9GuH8dSly2XhsP1jIFWqvKNeBkTQixap5Izzt+l82IFQYYfrrKvqn2ISdXDv+rqFRZ4+QcEk72/1eBN9OJPD0y2J3NFBcp4eV2z+9ng42J22M+Q40ZBxfnNgLjOHMqKZlJu4313Xv5TSJKefBrtgIQRzNU1vrSqC+fV19n4WXb9GteXpm282WJ8vVQCpDm+3wsz3Dm+u4/tjrNpKVogc19TylT/SBpxmXHrQgZLx6vjr+X9rgdg505dmejJU+MyuRb/bh/4/OLTV4ZYwKTqNdOLyPaYhr760SzviqAzc8x3csAlrQd9aC3HH1sBKk/EA7eL3TtZd8jMtKp2mlsI50nRgeKyu+O2P/rhq99ImpMnReVm98beV4J5xXgDOrVFUC6bSgvvxPIOLgjW8uXJd2+AD5/BMsnkDHRcinu7III+EMHZkk2Ky5ITaS/hhCD8U= root@shevtsov
+
+apt:
+  preserve_sources_list: true
+packages:
+  - wget
+  - gnupg
+  - apt-transport-https
