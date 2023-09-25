@@ -6,19 +6,20 @@ terraform {
   }
 }
 
-provider yandex {
-  service_account_key_file = "../../../secrets/key.json"
-  cloud_id		   = var.yandex_cloud_id
-  folder_id 		   = var.yandex_folder_id
-  zone			   = "ru-central1-a"
+provider "yandex" {
+  token     = "y0_AgAAAAAe5bzAAATuwQAAAADegFtPgh5mgJFKSmmN3h_gtGKaIoQD6b8"
+  cloud_id  = "b1glk6l56hkqpmajlhbc"
+  folder_id = "b1g5bbvvnkqn9t7h7j08"
+  zone      = "ru-central1-a"
 }
 
-# Web Server 1
+#WEB server nginx 1 в зоне ru-central1-b
 
 resource "yandex_compute_instance" "web1" {
 
-  name     = "web1"
-  zone     = "ru-central1-b"
+  name = "web1"
+  platform_id = "standard-v3"
+  zone = "ru-central1-b"
   hostname = "web1.srv."
 
   scheduling_policy {
@@ -27,19 +28,19 @@ resource "yandex_compute_instance" "web1" {
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 2
+    cores  = 2
+    memory = 2
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 12
+    image_id = "fd830gae25ve4glajdsj"
+    size = 15
     }
   }
 
-  network_interface {
-    subnet_id = "${yandex_vpc_subnet.subnet-web1.id}"
+network_interface {
+  subnet_id = "${yandex_vpc_subnet.subnet-web1.id}"
     dns_record {
       fqdn = "web1.srv."
     ttl = 300
@@ -48,18 +49,21 @@ resource "yandex_compute_instance" "web1" {
     security_group_ids = [yandex_vpc_security_group.sg-private.id]
   }
 
-  metadata = {
-
-    user-data = "${file("./meta-web1.yml")}"
+metadata = {
+ user-data = file("./web.yaml")
   }
-}
 
-# Web Server 2
+
+}
+########################################################
+
+#WEB server nginx 2 в зоне ru-central1-a
 
 resource "yandex_compute_instance" "web2" {
 
-  name     = "web2"
-  zone     = "ru-central1-a"
+  name = "web2"
+  platform_id = "standard-v3"
+  zone = "ru-central1-a"
   hostname = "web2.srv."
 
   scheduling_policy {
@@ -68,18 +72,18 @@ resource "yandex_compute_instance" "web2" {
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 2
+    cores  = 2
+    memory = 2
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 12
+    image_id = "fd830gae25ve4glajdsj"
+    size = 15
     }
   }
 
-  network_interface {
+network_interface {
     subnet_id = "${yandex_vpc_subnet.subnet-web2.id}"
     dns_record {
       fqdn = "web2.srv."
@@ -89,101 +93,59 @@ resource "yandex_compute_instance" "web2" {
     security_group_ids = [yandex_vpc_security_group.sg-private.id]
   }
 
-  metadata = {
-
-    user-data = "${file("./meta-web2.yml")}"
+metadata = {
+ user-data = file("./web.yaml")
   }
+
 }
+###################################################################
+#  Zabbix server  
 
+resource "yandex_compute_instance" "zabbix" {
 
-# Prometheus Server
-
-resource "yandex_compute_instance" "prometheus" {
-
-  name     = "prometheus"
-  zone     = "ru-central1-a"
-  hostname = "prometheus.srv."
-
-  scheduling_policy {
-    preemptible = true
-  }
+  name = "zabbix"
+  platform_id = "standard-v3"
+  zone = "ru-central1-b"
+   hostname = "zabbix.srv."
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 2
+    cores  = 2
+    memory = 3
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 12
+    image_id = "fd830gae25ve4glajdsj"
+    size = 10
     }
   }
 
-  network_interface {
-    subnet_id = "${yandex_vpc_subnet.subnet-prometheus.id}"
+
+network_interface {
+    subnet_id = "${yandex_vpc_subnet.subnet-zabbix.id}"
     dns_record {
-      fqdn = "prometheus.srv."
-    ttl = 300
-    }
-    nat = true
-    security_group_ids = [yandex_vpc_security_group.sg-private.id]
-  }
-
-  metadata = {
-
-    user-data = "${file("./meta-prometheus.yml")}"
-  }
-}
-
-# Grafana Server
-
-resource "yandex_compute_instance" "grafana" {
-
-  name     = "grafana"
-  zone     = "ru-central1-b"
-  hostname = "grafana.srv."
-
-  scheduling_policy {
-    preemptible = true
-  }
-
-  resources {
-    core_fraction = 20
-    cores         = 2
-    memory        = 2
-  }
-
-  boot_disk {
-    initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 12
-    }
-  }
-
-  network_interface {
-    subnet_id = "${yandex_vpc_subnet.subnet-grafana.id}"
-    dns_record {
-      fqdn = "gtafana.srv."
+      fqdn = "zabbix.srv."
     ttl = 300
     }
     nat = true
     security_group_ids = [yandex_vpc_security_group.sg-public.id]
   }
-
-  metadata = {
-
-    user-data = "${file("./meta-grafana.yml")}"
+metadata = {
+ user-data = file("./zabbix.yaml")
   }
-}
 
-# ElasticSearch Server
+}
+########################################################
+
+
+#Elasticsearch server
 
 resource "yandex_compute_instance" "elasticsearch" {
 
-  name     = "elasticsearch"
-  zone     = "ru-central1-b"
+  name = "elasticsearch"
+  platform_id = "standard-v3"
+  zone = "ru-central1-b"
   hostname = "elasticsearch.srv."
 
   scheduling_policy {
@@ -192,18 +154,19 @@ resource "yandex_compute_instance" "elasticsearch" {
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 8
+    cores  = 4
+    memory = 8
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 14
+    image_id = "fd830gae25ve4glajdsj"
+    size = 10
     }
   }
 
-  network_interface {
+
+network_interface {
     subnet_id = "${yandex_vpc_subnet.subnet-elastic.id}"
     dns_record {
       fqdn = "elastic.srv."
@@ -213,18 +176,21 @@ resource "yandex_compute_instance" "elasticsearch" {
     security_group_ids = [yandex_vpc_security_group.sg-private.id]
   }
 
-  metadata = {
 
-    user-data = "${file("./meta-elasticsearch.yml")}"
+metadata = {
+ user-data = file("./elasticsearch.yaml")
   }
-}
 
-# Kibana server
+}
+########################################################
+
+# Kibana  Server
 
 resource "yandex_compute_instance" "kibana" {
 
-  name     = "kibana"
-  zone     = "ru-central1-b"
+  name = "kibana"
+  platform_id = "standard-v3"
+  zone = "ru-central1-b"
   hostname = "kibana.srv."
 
   scheduling_policy {
@@ -233,19 +199,18 @@ resource "yandex_compute_instance" "kibana" {
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 8
+    cores  = 4
+    memory = 8
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 14
+    image_id = "fd830gae25ve4glajdsj"
+    size = 10
     }
   }
 
-
-  network_interface {
+network_interface {
     subnet_id = "${yandex_vpc_subnet.subnet-kibana.id}"
     dns_record {
       fqdn = "kibana.srv."
@@ -255,11 +220,12 @@ resource "yandex_compute_instance" "kibana" {
     security_group_ids = [yandex_vpc_security_group.sg-public.id]
   }
 
-  metadata = {
-
-    user-data = "${file("./meta-kibana.yml")}"
+metadata = {
+ user-data = file("./kibana.yaml")
   }
+
 }
+#########################################
 
 # Gateway Server
 
@@ -275,14 +241,14 @@ resource "yandex_compute_instance" "sshgw" {
 
   resources {
     core_fraction = 20
-    cores         = 2
-    memory        = 2
+    cores  = 2
+    memory = 2
   }
 
-  boot_disk {
+boot_disk {
     initialize_params {
-      image_id = "fd84jc4fbfvm9sdelteh"
-      size     = 12
+    image_id = "fd830gae25ve4glajdsj"
+    size = 15
     }
   }
 
@@ -296,12 +262,12 @@ resource "yandex_compute_instance" "sshgw" {
     security_group_ids = [yandex_vpc_security_group.sg-sshgw.id]
   }
 
-  metadata = {
-
-    user-data = "${file("./meta-sshgw.yml")}"
+metadata = {
+ user-data = file("./default.yaml")
   }
 }
 
+#########################################
 # Network
 
 resource "yandex_vpc_network" "network-1" {
@@ -329,21 +295,12 @@ resource "yandex_vpc_subnet" "subnet-web2" {
   network_id     = "${yandex_vpc_network.network-1.id}"
 }
 
-# Subnet prometheus
 
-resource "yandex_vpc_subnet" "subnet-prometheus" {
+# Subnet zabbix
 
-  name           = "subnet-prometheus"
-  zone           = "ru-central1-a"
-  v4_cidr_blocks = ["192.168.3.0/24"]
-  network_id     = "${yandex_vpc_network.network-1.id}"
-}
+resource "yandex_vpc_subnet" "subnet-zabbix" {
 
-# Subnet grafana
-
-resource "yandex_vpc_subnet" "subnet-grafana" {
-
-  name           = "subnet-grafana"
+  name           = "subnet-zabbix"
   zone           = "ru-central1-b"
   v4_cidr_blocks = ["192.168.4.0/24"]
   network_id     = "${yandex_vpc_network.network-1.id}"
@@ -491,50 +448,3 @@ resource "yandex_alb_load_balancer" "alb-1" {
   }
 }
 
-
-# Output
-
-output "internal-web1" {
-  value = yandex_compute_instance.web1.network_interface.0.ip_address
-}
-
-output "internal-web2" {
-  value = yandex_compute_instance.web2.network_interface.0.ip_address
-}
-
-output "internal-prometheus" {
-  value = yandex_compute_instance.prometheus.network_interface.0.ip_address
-}
-
-output "internal-grafana" {
-  value = yandex_compute_instance.grafana.network_interface.0.ip_address
-}
-output "external-grafana" {
-  value = yandex_compute_instance.grafana.network_interface.0.nat_ip_address
-}
-
-output "internal-elastic" {
-  value = yandex_compute_instance.elasticsearch.network_interface.0.ip_address
-}
-
-output "internal-kibana" {
-  value = yandex_compute_instance.kibana.network_interface.0.ip_address
-}
-output "external-kibana" {
-  value = yandex_compute_instance.kibana.network_interface.0.nat_ip_address
-}
-
-output "internal-sshgw" {
-  value = yandex_compute_instance.sshgw.network_interface.0.ip_address
-}
-output "external-sshgw" {
-  value = yandex_compute_instance.sshgw.network_interface.0.nat_ip_address
-}
-
-#output "external-alb" {
-#  value = yandex_alb_load_balancer.alb-1.listener[0].endpoint[0].address[0].external_ipv4_address[0].address
-#}
-
-output "external-alb" {
-  value = yandex_vpc_address.addr-1.external_ipv4_address[0].address
-}
