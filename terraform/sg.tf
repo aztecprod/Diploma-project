@@ -52,21 +52,6 @@ resource "yandex_vpc_security_group" "sg-private" {
   }
 
   ingress {
-    protocol          = "TCP"
-    description       = "prometheus"
-    security_group_id = yandex_vpc_security_group.sg-public.id
-    port              = 9090
-  }
-
-  ingress {
-    protocol          = "TCP"
-    description       = "alert manager"
-    security_group_id = yandex_vpc_security_group.sg-public.id
-    port              = 9093
-  }
-
-
-  ingress {
     protocol          = "ANY"
     description       = "any"
     security_group_id = yandex_vpc_security_group.sg-sshgw.id
@@ -89,9 +74,9 @@ resource "yandex_vpc_security_group" "sg-public" {
 
  ingress {
     protocol       = "TCP"
-    description    = "grafana"
+    description    = "zabbix"
     v4_cidr_blocks = ["0.0.0.0/0"]
-    port           = 3000
+    port           = 8080
   }
 
  ingress {
