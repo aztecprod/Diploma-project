@@ -57,7 +57,23 @@ resource "yandex_vpc_security_group" "sg-private" {
     security_group_id = yandex_vpc_security_group.sg-sshgw.id
   }
 
+  ingress {
+    protocol       = "TCP"
+    description    = "zabbix-agent"
+    v4_cidr_blocks = ["0.0.0.0/0"]
+    port           = 10050
+  }
+
+   ingress {
+    protocol       = "TCP"
+    description    = "zabbix-agent"
+    v4_cidr_blocks = ["0.0.0.0/0"]
+    port           = 10051
+  }
+
+
 }
+
 
 # sg public
 
@@ -77,6 +93,21 @@ resource "yandex_vpc_security_group" "sg-public" {
     description    = "zabbix"
     v4_cidr_blocks = ["0.0.0.0/0"]
     port           = 8080
+  }
+
+
+ ingress {
+    protocol       = "TCP"
+    description    = "zabbix"
+    v4_cidr_blocks = ["0.0.0.0/0"]
+    port           = 10050
+  }
+
+   ingress {
+    protocol       = "TCP"
+    description    = "zabbix-agent"
+    v4_cidr_blocks = ["0.0.0.0/0"]
+    port           = 10051
   }
 
  ingress {
