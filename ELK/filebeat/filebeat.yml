@@ -1,0 +1,26 @@
+filebeat.inputs:
+- type: log
+  enabled: true
+  paths:
+      - /var/log/nginx/access.log*
+  fields:
+    type: nginx_access
+  fields_under_root: true
+  scan_frequency: 5s
+
+- type: log
+  enabled: true
+  paths:
+      - /var/log/nginx/error.log*
+  fields:
+    type: nginx_error
+  fields_under_root: true
+  scan_frequency: 5s
+
+
+processors:
+ - drop_fields: 
+    fields: ["beat", "input_type", "prospector", "input", "host", "agent","ecs"]
+
+output.logstash:
+  hosts: ["elastic.srv:5044"]
