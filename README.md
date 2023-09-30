@@ -52,6 +52,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/ELK/elasticsearch/elastic
 
 Листинги файлов конфигурации kibana - по ссылке
 
+
 https://github.com/aztecprod/Diploma-project/blob/main/ELK/kibana/kibana.yml
 
 Кроме того, в файлы terraform-конфигураций метаданных веб-серверов  добавлен код установки агента filebeat - поставщика данных для стека ELK.
