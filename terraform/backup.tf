@@ -8,7 +8,7 @@ resource "yandex_compute_snapshot_schedule" "default" {
   snapshot_count = 7
 
   snapshot_spec {
-    description = "weekly"
+    description = "daily"
   }
 
   disk_ids = [yandex_compute_instance.web1.boot_disk[0].disk_id, 
