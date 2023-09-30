@@ -2,7 +2,7 @@ resource "yandex_compute_snapshot_schedule" "default" {
   name = "default"
 
   schedule_policy {
-    expression = "0 5 ? * *"
+    expression = "0 0 * * SUN"
   }
 
   snapshot_count = 1
