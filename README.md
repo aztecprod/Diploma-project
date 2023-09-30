@@ -36,6 +36,25 @@ https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
 ## Мониторинг
 asdasd
 ## Логи
+Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
+Также добавляем в main.tf блок кода "Kibana Server", отвечающий за развертывание сервера визуализации логов kibana.
+
+Листинг файла terraform-конфигурации сервера elasticsearch и кибана доступен по ссылке
+
+https://github.com/aztecprod/Diploma-project/blob/main/meta-data/elastic
+https://github.com/aztecprod/Diploma-project/blob/main/meta-data/kibana
+
+Листинг файла конфигурации elasticsearch доступен по ссылке
+
+https://github.com/aztecprod/Diploma-project/blob/main/ELK/elasticsearch/elasticsearch.yml
+
+Листинги файлов конфигурации kibana - по ссылке
+https://github.com/aztecprod/Diploma-project/blob/main/ELK/kibana/kibana.yml
+
+Кроме того, в файлы terraform-конфигураций метаданных веб-серверов  добавлен код установки агента filebeat - поставщика данных для стека ELK.
+
+Листинг файла конфигурации агента filebeat доступен поссылке
+https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml
 
 ## Сеть
 Создаем виртуальную машину sshgw.srv, доступ на которую будет осуществляться по протоколу ssh, и с которой можно будет получить доступ к остальным серверам инфраструктуры. Для этого добавляем соответсвующий блок кода "Gateway Server" в конфигурационный файл main.tf. Листинг terraform-конфигурации сервера sshgw доступен по ссылке
