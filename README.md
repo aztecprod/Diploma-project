@@ -55,6 +55,11 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 #### Target Group:
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/247fb85b-1bd9-49c3-9b42-61fc89aeed63)
 
+Проверяем работу балансировщика,сделав к нему запрос через curl -v <публичный IP балансера>:80 
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/73edec18-867b-4a51-bb90-9c3fe5a67599)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/9486fbe6-c941-4e91-9c7f-83e4e039a9be)
+
+
 ## Мониторинг
 asdasd
 ## Логи
