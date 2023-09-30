@@ -20,7 +20,8 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 Список серверов с их ip адресами:
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/071de6e0-8973-42a7-9992-7abfe136edee)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/20a58c0b-f5e3-446f-bb1a-3ce0315f4a7d)
+
 
 
 
