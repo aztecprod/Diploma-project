@@ -39,7 +39,7 @@ asdasd
 Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
 Также добавляем в main.tf блок кода "Kibana Server", отвечающий за развертывание сервера визуализации логов kibana.
 
-Листинг файла terraform-конфигурации сервера elasticsearch и кибана доступен по ссылке
+Листинг метаданных elasticsearch и кибана доступен по ссылке
 
 https://github.com/aztecprod/Diploma-project/blob/main/meta-data/elastic
 
