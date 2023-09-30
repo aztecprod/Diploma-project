@@ -104,3 +104,11 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/sg.tf
 
 
 ## Резервное копирование
+Создаем файл конфигурации backup.tf, содержащий код расписания, по которому будут создаваться снапшоты дисков всех виртуальных машин, входящих в инфраструктуру. Листинг файла backup.tf доступен по ссылке
+
+https://github.com/aztecprod/Diploma-project/blob/main/terraform/backup.tf
+
+В соответствии с Заданием определяем snapshot_count = 1, expression = "0 0 * * SUN" (т.е. снапшоты дисков будут создаваться каждое воскресенье в полночь).
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/6588b9f5-bd62-4134-b74d-5ffe09f3e16b)
+
