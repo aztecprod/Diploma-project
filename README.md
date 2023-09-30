@@ -3,6 +3,7 @@
 Задание: https://github.com/netology-code/sys-diplom/tree/diplom-zabbix
 
 Решение:
+
 В облаке развертываются следующие сервера:
 
 web1.srv, web2.srv - веб-серверы nginx, на которых установлены сервисы zabbix-agent и filebeat, позволяющие передавать информацию мониторинга и содержимом логов на серверы zabbix и elasticsearch соответственно;
