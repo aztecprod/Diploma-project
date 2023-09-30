@@ -42,6 +42,7 @@ asdasd
 Листинг файла terraform-конфигурации сервера elasticsearch и кибана доступен по ссылке
 
 https://github.com/aztecprod/Diploma-project/blob/main/meta-data/elastic
+
 https://github.com/aztecprod/Diploma-project/blob/main/meta-data/kibana
 
 Листинг файла конфигурации elasticsearch доступен по ссылке
