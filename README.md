@@ -71,7 +71,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
 
 https://github.com/aztecprod/Diploma-project/blob/main/meta-data/zabbix
 
-Дополнительно конфигурации zabbix были использованы команды:
+Дополнительно к конфигурации zabbix сервера были использованы команды:
 ```
 sudo -u postgres createuser --pwprompt zabbix
 
