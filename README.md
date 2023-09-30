@@ -36,8 +36,8 @@ https://github.com/sdsdsL/sys-diplom/blob/main/config/sg.tf
 
 Всего создаем 4 группы безопасности: sg-balancer - для балансировщика, sg-sshgw - для сервера sshgw, sg-private - для группы серверов, досуп к которым не разрешен из сети Интернет, sg-public - для группы серверов, доступ к которым возможен из сети интернет по определеным портам, соответствующим публикуемым сервисам.
 
-В группу безопасности sg-private включаем сервера web1.srv, web2.srv, prometheus.srv и elastic.srv
-В группу безопасности sg-public - сервера grafana.srv и kibana.srv
+В группу безопасности sg-private включаем сервера web1.srv, web2.srv  и elastic.srv
+В группу безопасности sg-public - сервера zabbix.srv и kibana.srv
 
 Включение сервера в определенную группу безопасности осуществляется заданием параметра security_group_ids в блоке network_interface, описывающем сетевую конфигурацию каждого сервера в файле конфигурации main.tf
 
