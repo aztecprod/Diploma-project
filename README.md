@@ -95,9 +95,12 @@ sed -i 's/Server=127.0.0.1/Server=192.168.4.34/g' /etc/zabbix/zabbix_agentd.conf
 
 Доступ к веб-серверу zabbix
 
-http://84.201.153.199:8080/
+#### http://84.201.153.199:8080/
+
 Логин: Admin
+
 Пароль: zabbix
+
 
 ## Логи
 Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
