@@ -63,7 +63,16 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 Как видим backend ip меняется с web1 на web2,значит балансировщик распеределяет трафик между веб-серверами
 
 ## Мониторинг
-asdasd
+Добавляем сервер Zabbix (блок кода "Zabbix Server" в конфигурационном файле main.tf). Листинг файла terraform-конфигурации zabbix доступен по ссылке
+
+https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
+
+Мета-файл zabbix server - по ссылке
+
+https://github.com/aztecprod/Diploma-project/blob/main/meta-data/zabbix
+
+
+
 ## Логи
 Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
 Также добавляем в main.tf блок кода "Kibana Server", отвечающий за развертывание сервера визуализации логов kibana.
