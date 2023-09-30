@@ -21,13 +21,11 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 ## Сайт
 На первом этапе разворачиваем серверы nginx и балансировщик, создаем "Tagget group", "Backend group", "HTTP router" и "Application load balancer" (ALB). Данным элементам соответствуют блоки кода "Web Server 1", "Web Server 2", "Target group for ALB", "Backend group for ALB", "ALB router", "ALB virtual host", "ALB" в основном конфигурационном файле terraform main.tf, листинг которого доступен по ссылке
 
-[https://github.com/sdsdsL/sys-diplom/blob/main/config/main.tf]
+https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
 
-Листинг файлов terraform-конфигураций веб-серверов web1.srv и web2.srv доступен по ссылкам
+Листинг метаданных веб-серверов web1.srv и web2.srv доступен по ссылке
 
-https://github.com/sdsdsL/sys-diplom/blob/main/config/meta-web1.yml
-и
-https://github.com/sdsdsL/sys-diplom/blob/main/config/meta-web2.yml
+https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 Также создаем базовые настройки сети - блок кода "Network" в основном файле конфигурации терраформ main.tf, при этом веб-сервера размещаем в разных зонах согласно Заданию.
 
