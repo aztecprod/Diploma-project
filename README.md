@@ -63,6 +63,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml
 
 Доступ к веб-серверу кибана :  http://158.160.113.108:5601/
 
+
 Как видно из рисунка ниже,логи от обоих веб-сервером приходят:
 
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/5d88cf03-1638-4b13-a72f-e5bcd5185a37)
