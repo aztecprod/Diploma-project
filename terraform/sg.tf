@@ -40,14 +40,14 @@ resource "yandex_vpc_security_group" "sg-private" {
   ingress {
     protocol          = "TCP"
     description       = "balancer"
-    security_group_id = yandex_vpc_security_group.sg-balancer.id
+    v4_cidr_blocks    = ["0.0.0.0/0"]
     port              = 80
   }
 
   ingress {
     protocol          = "TCP"
     description       = "elasticsearch"
-    security_group_id = yandex_vpc_security_group.sg-public.id
+    v4_cidr_blocks    = ["0.0.0.0/0"]
     port              = 9200
   }
 
@@ -55,6 +55,20 @@ resource "yandex_vpc_security_group" "sg-private" {
     protocol          = "ANY"
     description       = "any"
     security_group_id = yandex_vpc_security_group.sg-sshgw.id
+  }
+
+  ingress {
+    protocol          = "TCP"
+    description       = "filebeat"
+    v4_cidr_blocks    = ["0.0.0.0/0"]
+    port              = 5044
+  }
+
+  ingress {
+    protocol          = "TCP"
+    description       = "filebeat"
+    v4_cidr_blocks    = ["0.0.0.0/0"]
+    port              = 5043
   }
 
   ingress {
@@ -73,7 +87,6 @@ resource "yandex_vpc_security_group" "sg-private" {
 
 
 }
-
 
 # sg public
 
@@ -125,7 +138,7 @@ resource "yandex_vpc_security_group" "sg-public" {
 
 }
 
-# sg sshgw 
+# sg sshgw
 
 resource "yandex_vpc_security_group" "sg-sshgw" {
   name       = "sg-sshgw"
