@@ -61,6 +61,12 @@ https://github.com/aztecprod/Diploma-project/blob/main/ELK/kibana/kibana.yml
 
 https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml
 
+Доступ к веб-серверу кибана :  http://158.160.113.108:5601/
+Как видно из рисунка ниже,логи от обоих веб-сервером приходят:
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/5d88cf03-1638-4b13-a72f-e5bcd5185a37)
+
+
 ## Сеть
 Создаем виртуальную машину sshgw.srv, доступ на которую будет осуществляться по протоколу ssh, и с которой можно будет получить доступ к остальным серверам инфраструктуры. Для этого добавляем соответсвующий блок кода "Gateway Server" в конфигурационный файл main.tf. Листинг terraform-конфигурации сервера sshgw доступен по ссылке
 
