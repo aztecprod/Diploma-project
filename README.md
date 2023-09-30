@@ -87,7 +87,11 @@ systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
 
 systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
 ```
+И для конфигурации zabbix-agent:
 
+```
+sed -i 's/Server=127.0.0.1/Server=192.168.4.34/g' /etc/zabbix/zabbix_agentd.conf
+```
 
 
 
