@@ -18,6 +18,11 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 Создание инфрастукткры в terraform осуществлялось путем последовательного добавления блоков кода в конфигурационные файлы с последующей сборкой-разборкой инфраструктуры и отладкой добавляемых блоков кода.
 
+Список серверов с их ip адресами:
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/1a82c644-c72e-4d70-8c8d-99ed64303704)
+
+
 ## Сайт
 На первом этапе разворачиваем серверы nginx и балансировщик, создаем "Tagget group", "Backend group", "HTTP router" и "Application load balancer" (ALB). Данным элементам соответствуют блоки кода "Web Server 1", "Web Server 2", "Target group for ALB", "Backend group for ALB", "ALB router", "ALB virtual host", "ALB" в основном конфигурационном файле terraform main.tf, листинг которого доступен по ссылке
 
