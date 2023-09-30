@@ -22,6 +22,10 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/20a58c0b-f5e3-446f-bb1a-3ce0315f4a7d)
 
+Примечание: для доступа по ssh к серверам используем ключи RSA (Ссылка на публичный и приватный ключ ниже)
+
+https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
+
 
 
 ## Сайт
@@ -35,9 +39,6 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 Также создаем базовые настройки сети - блок кода "Network" в основном файле конфигурации терраформ main.tf, при этом веб-сервера размещаем в разных зонах согласно Заданию.
 
-Примечание: для доступа по ssh к серверам используем ключи RSA (Ссылка на публичный и приватный ключ ниже)
-
-https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
 
 #### Application load balancer:
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/d9085796-ab6f-466e-b535-80ea729be825)
