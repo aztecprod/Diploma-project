@@ -101,6 +101,14 @@ sed -i 's/Server=127.0.0.1/Server=192.168.4.34/g' /etc/zabbix/zabbix_agentd.conf
 
 Пароль: zabbix
 
+Доступность zabbix-агентов
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/8cd1f928-be42-4d86-a299-a1b584767760)
+
+
+Созданный дашбоард:
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/7feb5d8c-9653-41a0-b7cc-170b22aae0c3)
 
 ## Логи
 Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
