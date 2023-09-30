@@ -39,6 +39,9 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 Также создаем базовые настройки сети - блок кода "Network" в основном файле конфигурации терраформ main.tf, при этом веб-сервера размещаем в разных зонах согласно Заданию.
 
+#### Карта балансировки:
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/f3c7c326-ccb1-4983-8f57-5ae9a56f01d2)
+
 
 #### Application load balancer:
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/d9085796-ab6f-466e-b535-80ea729be825)
