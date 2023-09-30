@@ -71,6 +71,24 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
 
 https://github.com/aztecprod/Diploma-project/blob/main/meta-data/zabbix
 
+Дополнительно конфигурации zabbix были использованы команды:
+```
+sudo -u postgres createuser --pwprompt zabbix
+
+sudo -u postgres createdb -O zabbix zabbix
+
+zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
+
+sed -i 's/# DBPassword=/DBPassword=12345/g' /etc/zabbix/zabbix_server.conf
+
+sed  -i '1,5s/#//' /etc/zabbix/nginx.conf
+
+systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
+
+systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
+```
+
+
 
 
 ## Логи
