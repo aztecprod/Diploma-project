@@ -31,6 +31,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 Примечание: для доступа по ssh к серверам используем ключи RSA (Ссылка на публичный и приватный ключ ниже)
 
+https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
 
 ## Мониторинг
 asdasd
