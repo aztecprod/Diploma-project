@@ -22,10 +22,6 @@ resource "yandex_compute_instance" "web1" {
   zone = "ru-central1-b"
   hostname = "web1.srv."
 
-  scheduling_policy {
-    preemptible = true
-  }
-
   resources {
     core_fraction = 20
     cores  = 2
@@ -56,7 +52,6 @@ metadata = {
 
 }
 ########################################################
-
 #WEB server nginx 2 в зоне ru-central1-a
 
 resource "yandex_compute_instance" "web2" {
@@ -65,10 +60,6 @@ resource "yandex_compute_instance" "web2" {
   platform_id = "standard-v3"
   zone = "ru-central1-a"
   hostname = "web2.srv."
-
-  scheduling_policy {
-    preemptible = true
-  }
 
   resources {
     core_fraction = 20
@@ -99,7 +90,7 @@ metadata = {
 
 }
 ###################################################################
-#  Zabbix server  
+#  Zabbix server
 
 resource "yandex_compute_instance" "zabbix" {
 
@@ -138,19 +129,14 @@ metadata = {
 }
 ########################################################
 
-
 #Elasticsearch server
 
 resource "yandex_compute_instance" "elasticsearch" {
 
   name = "elasticsearch"
   platform_id = "standard-v3"
-  zone = "ru-central1-b"
+  zone = "ru-central1-a"
   hostname = "elasticsearch.srv."
-
-  scheduling_policy {
-    preemptible = true
-  }
 
   resources {
     core_fraction = 20
@@ -184,18 +170,15 @@ metadata = {
 }
 ########################################################
 
+
 # Kibana  Server
 
 resource "yandex_compute_instance" "kibana" {
 
   name = "kibana"
   platform_id = "standard-v3"
-  zone = "ru-central1-b"
+  zone = "ru-central1-a"
   hostname = "kibana.srv."
-
-  scheduling_policy {
-    preemptible = true
-  }
 
   resources {
     core_fraction = 20
@@ -226,6 +209,7 @@ metadata = {
 
 }
 #########################################
+
 
 # Gateway Server
 
@@ -447,4 +431,3 @@ resource "yandex_alb_load_balancer" "alb-1" {
     }
   }
 }
-
