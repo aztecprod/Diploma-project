@@ -22,20 +22,6 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/20a58c0b-f5e3-446f-bb1a-3ce0315f4a7d)
 
-Application load balancer:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/d9085796-ab6f-466e-b535-80ea729be825)
-
-HTTP router:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/111b3290-43b2-4794-8e95-884c23c705f7)
-
-Backend Group:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/dcb5934c-689f-49da-a87d-ec227ff37e8d)
-
-Target Group:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/247fb85b-1bd9-49c3-9b42-61fc89aeed63)
-
-
-
 
 
 ## Сайт
@@ -52,6 +38,18 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 Примечание: для доступа по ssh к серверам используем ключи RSA (Ссылка на публичный и приватный ключ ниже)
 
 https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
+
+#### Application load balancer:
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/d9085796-ab6f-466e-b535-80ea729be825)
+
+#### HTTP router:
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/111b3290-43b2-4794-8e95-884c23c705f7)
+
+#### Backend Group:
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/dcb5934c-689f-49da-a87d-ec227ff37e8d)
+
+#### Target Group:
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/247fb85b-1bd9-49c3-9b42-61fc89aeed63)
 
 ## Мониторинг
 asdasd
