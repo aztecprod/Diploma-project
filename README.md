@@ -85,5 +85,22 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/sg.tf
 
 Включение сервера в определенную группу безопасности осуществляется заданием параметра security_group_ids в блоке network_interface, описывающем сетевую конфигурацию каждого сервера в файле конфигурации main.tf
 
-Собираем инфраструктуру в терраформ и в консоли управления yandex Cloud смотрим информацию о группах безопасности 
+Собираем инфраструктуру в терраформ и в консоли управления Yandex Cloud смотрим информацию о группах безопасности 
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/3a0ec3a8-36f1-4dc9-b37c-a13acf1ae632)
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/428042da-9c3d-4db5-b35d-424bc7477f32)
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/881fc533-9fbe-40fd-8ca6-a9ba1fcdd7e1)
+
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/408ef125-155c-4fca-9502-649283bacc22)
+
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/3dbe1189-3ff2-4b6c-b6e2-3ab59b8c1946)
+
+
+
+
+
 ## Резервное копирование
