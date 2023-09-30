@@ -76,7 +76,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/default
 
 Создаем группы безопасности, конфигурацию которых для наглядности помещаем в отдельный конфигурационный файл sg.tf, листинг которого доступен по ссылке
 
-https://github.com/sdsdsL/sys-diplom/blob/main/config/sg.tf
+https://github.com/aztecprod/Diploma-project/blob/main/terraform/sg.tf
 
 Всего создаем 4 группы безопасности: sg-balancer - для балансировщика, sg-sshgw - для сервера sshgw, sg-private - для группы серверов, досуп к которым не разрешен из сети Интернет, sg-public - для группы серверов, доступ к которым возможен из сети интернет по определеным портам, соответствующим публикуемым сервисам.
 
