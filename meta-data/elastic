@@ -23,7 +23,7 @@ packages:
 
 runcmd:
   - [sh, -c, "sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -"]
-  - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/8/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-8.x.list"]
+  - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/8/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-7.x.list"]
   - [sh, -c, "sudo apt update"]
   - [sh, -c, "sudo apt install -y elasticsearch"]
   - [sh, -c, "sudo apt install -y logstash"]
