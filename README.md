@@ -80,7 +80,8 @@ https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
 Доступность zabbix-агентов
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/8cd1f928-be42-4d86-a299-a1b584767760)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/e8de5931-4600-4bfc-b46f-13327a87aa02)
+
 
 
 Созданный дашбоард:
@@ -91,34 +92,21 @@ https://github.com/aztecprod/Diploma-project/tree/main/ansible
 Добавляем в основной файл конфигурации терраформ main.tf блок кода "Elasticsearch Server", отвечающий за развертывыние сервера elasticserch .
 Также добавляем в main.tf блок кода "Kibana Server", отвечающий за развертывание сервера визуализации логов kibana.
 
-Листинг метаданных elasticsearch и кибана доступен по ссылке
+Плейбук установки elasticsearch и kibana через ansible - по ссылке
 
-https://github.com/aztecprod/Diploma-project/blob/main/meta-data/elastic
+https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
+Плейбук установки filebeat - по ссылке
 
-https://github.com/aztecprod/Diploma-project/blob/main/meta-data/kibana
+https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
-Листинг файла конфигурации elasticsearch доступен по ссылке
-
-https://github.com/aztecprod/Diploma-project/blob/main/ELK/elasticsearch/elasticsearch.yml
-
-Листинги файлов конфигурации kibana - по ссылке
-
-
-https://github.com/aztecprod/Diploma-project/blob/main/ELK/kibana/kibana.yml
-
-Кроме того, в файлы terraform-конфигураций метаданных веб-серверов  добавлен код установки агента filebeat - поставщика данных для стека ELK.
-
-Листинг файла конфигурации агента filebeat доступен по ссылке
-
-https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml
-
-Доступ к веб-серверу кибана :  http://158.160.113.108:5601/
+Доступ к веб-серверу кибана :  http://51.250.86.194:5601/
 
 
 Как видно из рисунка ниже,логи от обоих веб-серверов приходят:
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/5d88cf03-1638-4b13-a72f-e5bcd5185a37)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/05fd9e01-dbec-428b-bfe1-e764cd5a2216)
+
 
 
 ## Сеть
