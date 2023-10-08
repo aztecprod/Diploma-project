@@ -79,6 +79,8 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
 
 https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/3ab70430-be8f-4b5b-a630-f8b5b4c573d5)
+
 
 Доступ к веб-серверу zabbix
 
