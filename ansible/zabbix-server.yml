@@ -1,1 +1,8 @@
+---
+- hosts: zabbix
+  remote_user: user
+  become: yes
+  become_method: sudo
+  roles:
+    - zabbix-server
 
