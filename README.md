@@ -72,7 +72,7 @@ https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
 Доступ к веб-серверу zabbix
 
-#### http://84.201.153.199:8080/
+#### http://158.160.14.187:8080/
 
 Логин: Admin
 
