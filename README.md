@@ -38,20 +38,27 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 Также создаем базовые настройки сети - блок кода "Network" в основном файле конфигурации терраформ main.tf, при этом веб-сервера размещаем в разных зонах согласно Заданию.
 
 #### Карта балансировки:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/f3c7c326-ccb1-4983-8f57-5ae9a56f01d2)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/52402f3f-aa31-408f-83e0-1f2a254dd88a)
+
 
 
 #### Application load balancer:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/d9085796-ab6f-466e-b535-80ea729be825)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/405c4df6-3b4f-451a-9785-254296897ec3)
+
 
 #### HTTP router:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/111b3290-43b2-4794-8e95-884c23c705f7)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/87613b00-6b3e-4d0c-8de9-e495ae3c4a43)
+
+
 
 #### Backend Group:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/dcb5934c-689f-49da-a87d-ec227ff37e8d)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/1f643794-0fb9-4621-a186-e80841e0b404)
+
+
 
 #### Target Group:
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/247fb85b-1bd9-49c3-9b42-61fc89aeed63)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/1db41232-d961-47e7-aff8-128268d5b6a6)
+
 
 #### Проверяем работу балансировщика,сделав к нему запрос через curl -v <публичный IP балансера>:80 
 
