@@ -15,19 +15,19 @@
           - gnupg
         state: present
 
-    - name: Copy filebeat 7.14.1
+    - name: Copy kibana 7.17.9
       copy:
-        src: /home/alexander/ansible/filebeat-7.14.1-amd64.deb
+        src: /home/alexander/ansible/kibana-7.17.9-amd64.deb
         dest: /home/alexander/
 
     - name: Install filebeat
       apt:
-        deb: /home/prokhorov/filebeat-7.14.1-amd64.deb
+        deb: /home/prokhorov/kibana-7.17.9-amd64.deb
 
     - name: Copy config file for filebeat
       copy:
-        src: /home/alexander/filebeat.yml
-        dest: /etc/filebeat
+        src: /home/alexander/kibana.yml
+        dest: /etc/kibana
         mode: 0600
         owner: root
         group: root
@@ -35,5 +35,5 @@
     - name: Systemctl daemon reload
       systemd:
         daemon_reload: true
-        name: filebeat.service
+        name: kibana.service
         state: started
