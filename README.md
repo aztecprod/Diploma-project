@@ -115,7 +115,8 @@ https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
 Как видно из рисунка ниже,логи от обоих веб-серверов приходят:
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/05fd9e01-dbec-428b-bfe1-e764cd5a2216)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/1dfc2a83-8eb6-4ae5-9c9c-2695a3395230)
+
 
 
 
