@@ -15,14 +15,14 @@
           - gnupg
         state: present
 
-    - name: Copy elasticsearch 7.14.1
+    - name: Copy elasticsearch 7.17.9
       copy:
-        src: /home/alexander/ansible/elasticsearch-7.14.1-amd64.deb
+        src: /home/alexander/ansible/elasticsearch-7.17.9-amd64.deb
         dest: /home/alexander
 
     - name: Install elasticsearch
       apt:
-        deb: /home/alexander/elasticsearch-7.14.1-amd64.deb
+        deb: /home/alexander/elasticsearch-7.17.9-amd64.deb
 
     - name: Copy config file for elasticsearch
       copy:
