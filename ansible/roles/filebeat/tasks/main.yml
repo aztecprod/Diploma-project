@@ -10,14 +10,14 @@
           - gnupg
         state: present
 
-    - name: Copy filebeat 7.14.1
+    - name: Copy filebeat 7.17.9
       copy:
-        src: /home/alexander/ansible/filebeat-7.14.1-amd64.deb
+        src: /home/alexander/ansible/filebeat-7.17.9-amd64.deb
         dest: /home/prokhorov/
 
     - name: Install filebeat
       apt:
-        deb: /home/alexander/filebeat-7.14.1-amd64.deb
+        deb: /home/alexander/filebeat-7.17.9-amd64.deb
 
     - name: Copy config file for filebeat
       copy:
