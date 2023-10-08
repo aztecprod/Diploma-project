@@ -21,24 +21,24 @@ packages:
   - gnupg
   - apt-transport-https
 
-runcmd:
-  - [systemctl, nginx-reload]
-  - [systemctl, enable, nginx.service ]
-  - [systemctl, start, --no-block, nginx.service]
+# runcmd:
+#  - [systemctl, nginx-reload]
+#  - [systemctl, enable, nginx.service ]
+#  - [systemctl, start, --no-block, nginx.service]
 
-  - [sh, -c, "wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb"]
-  - [sh, -c, "sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb"]
-  - [sh, -c, "sudo apt update"]
-  - [sh, -c, "apt install -y zabbix-agent"]
-  - [systemctl, enable, zabbix-agent]
-  - [systemctl, start, --no-block, zabbix-agent]
+#  - [sh, -c, "wget https://repo.zabbix.com/zabbix/6.4/ubuntu/pool/main/z/zabbix-release/zabbix-release_6.4-1+ubuntu22.04_all.deb"]
+#  - [sh, -c, "sudo dpkg -i zabbix-release_6.4-1+ubuntu22.04_all.deb"]
+#  - [sh, -c, "sudo apt update"]
+#  - [sh, -c, "apt install -y zabbix-agent"]
+#  - [systemctl, enable, zabbix-agent]
+#  - [systemctl, start, --no-block, zabbix-agent]
 
-  - [sh, -c, "sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -"]
-  - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/8/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-8.x.list"]
-  - [sh, -c, "sudo apt update"]
-  - [sh, -c, "sudo apt install -y filebeat"]
-  - [sh, -c, "mv /etc/filebeat/filebeat.yml /etc/filebeat/filebeat.yml.bak"]
-  - [sh, -c, "wget -P /etc/filebeat https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml"]
+#  - [sh, -c, "sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -"]
+#  - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/8/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-8.x.list"]
+#  - [sh, -c, "sudo apt update"]
+#  - [sh, -c, "sudo apt install -y filebeat"]
+#  - [sh, -c, "mv /etc/filebeat/filebeat.yml /etc/filebeat/filebeat.yml.bak"]
+#  - [sh, -c, "wget -P /etc/filebeat https://github.com/aztecprod/Diploma-project/blob/main/ELK/filebeat/filebeat.yml"]
 
-  - [systemctl, enable, filebeat.service]
-  - [systemctl, start, --no-block, filebeat.service]
+#  - [systemctl, enable, filebeat.service]
+#  - [systemctl, start, --no-block, filebeat.service]
