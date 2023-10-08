@@ -62,8 +62,11 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 #### Проверяем работу балансировщика,сделав к нему запрос через curl -v <публичный IP балансера>:80 
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/73edec18-867b-4a51-bb90-9c3fe5a67599)
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/9486fbe6-c941-4e91-9c7f-83e4e039a9be) 
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/3edd2f65-fae7-4f7c-98ca-da8b927c1331)
+
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/324a57f7-46ef-46c7-992d-9227a6a8b6b2)
+
+ 
 
 Как видим backend ip меняется с web1 на web2,значит балансировщик распеределяет трафик между веб-серверами
 
