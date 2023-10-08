@@ -1,0 +1,15 @@
+---
+    - name: Systemctl enable filebeat
+      ansible.builtin.service:
+        name: filebeat.service
+        enabled: yes
+
+    - name: restarted nginx
+      service:
+        name: nginx
+        state: restarted
+
+    - name: restarted filebeat
+      service:
+       name: filebeat.service
+       state: restarted
