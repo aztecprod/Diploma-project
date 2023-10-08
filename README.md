@@ -22,10 +22,7 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 ![image](https://github.com/aztecprod/Diploma-project/assets/25949605/20a58c0b-f5e3-446f-bb1a-3ce0315f4a7d)
 
-Примечание: для доступа по ssh к серверам используем ключи RSA (Ссылка на публичный и приватный ключ ниже)
-
-https://github.com/aztecprod/Diploma-project/tree/main/id_rsa
-
+Примечание: для доступа по ssh к серверам используем ключи RSA 
 
 
 ## Сайт
