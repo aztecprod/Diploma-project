@@ -16,26 +16,26 @@ users:
 apt:
   preserve_sources_list: true
 
-packages:
-  - wget
-  - gnupg
-  - apt-transport-https
+#packages:
+#  - wget
+#  - gnupg
+#  - apt-transport-https
 
-runcmd:
-  - [sh, -c, "sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -"]
-  - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-7.x.list"]
-  - [sh, -c, "sudo apt update"]
-  - [sh, -c, "sudo apt install -y elasticsearch"]
-  - [sh, -c, "sudo apt install -y logstash"]
-  - [sh, -c, "mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak"]
-  - [sh, -c, "wget -P /etc/elasticsearch/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/elasticsearch/elasticsearch.yml"]
-  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/filter.conf"]
-  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/input.conf"]
-  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/output.conf"]
-  - [sh, -c, "chmod 664 /etc/elasticsearch/elasticsearch.yml"]
+#runcmd:
+#  - [sh, -c, "sudo wget -qO - https://artifacts.elastic.co/GPG-KEY-elasticsearch | sudo apt-key add -"]
+# - [sh, -c, "sudo echo 'deb [trusted=yes] https://mirror.yandex.ru/mirrors/elastic/7/ stable main' | sudo tee /etc/apt/sources.list.d/elastic-7.x.list"]
+# - [sh, -c, "sudo apt update"]
+#  - [sh, -c, "sudo apt install -y elasticsearch"]
+#  - [sh, -c, "sudo apt install -y logstash"]
+#  - [sh, -c, "mv /etc/elasticsearch/elasticsearch.yml /etc/elasticsearch/elasticsearch.yml.bak"]
+#  - [sh, -c, "wget -P /etc/elasticsearch/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/elasticsearch/elasticsearch.yml"]
+#  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/filter.conf"]
+#  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/input.conf"]
+#  - [sh, -c, "wget -P /etc/logstash/conf.d/ https://github.com/aztecprod/Diploma-project/blob/main/ELK/logstash/output.conf"]
+#  - [sh, -c, "chmod 664 /etc/elasticsearch/elasticsearch.yml"]
  
   
-  - [systemctl, enable, elasticsearch.service]
-  - [systemctl, enable, logstash.service]
-  - [systemctl, start, --no-block, elasticsearch.service]
-  - [systemctl, start, --no-block, logstash.service]
+#  - [systemctl, enable, elasticsearch.service]
+#  - [systemctl, enable, logstash.service]
+#  - [systemctl, start, --no-block, elasticsearch.service]
+#  - [systemctl, start, --no-block, logstash.service]
