@@ -65,31 +65,10 @@ https://github.com/aztecprod/Diploma-project/blob/main/meta-data/web
 
 https://github.com/aztecprod/Diploma-project/blob/main/terraform/main.tf
 
-Мета-файл zabbix server - по ссылке
+Плейбук установки zabbix-server и zabbix-agent через ansible - по ссылке
 
-https://github.com/aztecprod/Diploma-project/blob/main/meta-data/zabbix
+https://github.com/aztecprod/Diploma-project/tree/main/ansible
 
-Дополнительно к конфигурации zabbix сервера были использованы команды:
-```
-sudo -u postgres createuser --pwprompt zabbix
-
-sudo -u postgres createdb -O zabbix zabbix
-
-zcat /usr/share/zabbix-sql-scripts/postgresql/server.sql.gz | sudo -u zabbix psql zabbix
-
-sed -i 's/# DBPassword=/DBPassword=12345/g' /etc/zabbix/zabbix_server.conf
-
-sed  -i '1,5s/#//' /etc/zabbix/nginx.conf
-
-systemctl restart zabbix-server zabbix-agent nginx php8.1-fpm
-
-systemctl enable zabbix-server zabbix-agent nginx php8.1-fpm
-```
-И для конфигурации zabbix-agent:
-
-```
-sed -i 's/Server=127.0.0.1/Server=192.168.4.34/g' /etc/zabbix/zabbix_agentd.conf
-```
 
 Доступ к веб-серверу zabbix
 
