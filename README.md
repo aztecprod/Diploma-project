@@ -161,6 +161,7 @@ https://github.com/aztecprod/Diploma-project/blob/main/terraform/backup.tf
 
 В соответствии с Заданием определяем snapshot_count = 7, expression = "0 5 ? * *" (т.е. снапшоты дисков будут создаваться один раз в сутки в 5:00).
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/9079882b-6db5-4ab7-85c5-a26830bdea39)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/bc92183e-3666-4664-99b3-fb2e64bb55ed)
+
 
 
