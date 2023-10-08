@@ -1,0 +1,6 @@
+---
+
+    - name: Systemctl enable kibana
+      ansible.builtin.service:
+        name: kibana.service
+        enabled: yes
