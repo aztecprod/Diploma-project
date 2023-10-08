@@ -20,7 +20,8 @@ sshgw.srv - (ssh gateway), сервер, позволяющий получить
 
 ### Список серверов с их ip адресами:
 
-![image](https://github.com/aztecprod/Diploma-project/assets/25949605/20a58c0b-f5e3-446f-bb1a-3ce0315f4a7d)
+![image](https://github.com/aztecprod/Diploma-project/assets/25949605/1a75e134-a57d-4775-8d2c-9d32ff256a0b)
+
 
 Примечание: для доступа по ssh к серверам используем ключи RSA 
 
